@@ -1,0 +1,7 @@
+{
+  "name": "subs-burner",
+  "version": "0.1.0",
+  "description": "Easily create videos with subtitles burned-in",
+  "author": "Mahesh Bandara Wijerathna (m4heshd) <m4heshd@gmail.com>",
+  "license": "MIT"
+}
