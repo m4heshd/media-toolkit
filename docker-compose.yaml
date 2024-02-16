@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  subs-burner:
+    build: .
+    image: m4heshd/subs-burner
+    container_name: subs-burner
+    restart: no
+    volumes:
+      - ~/Videos:/data
