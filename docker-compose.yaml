@@ -7,4 +7,5 @@ services:
     container_name: subs-burner
     restart: no
     volumes:
+      - ./fonts:/usr/share/fonts/custom
       - ~/Videos:/data

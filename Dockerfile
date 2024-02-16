@@ -11,6 +11,7 @@ RUN apt-get install -y ffmpeg
 
 # Volumes
 VOLUME ["/data"]
+VOLUME ["/usr/share/fonts/custom"]
 
 # Init
 WORKDIR /data
