@@ -9,6 +9,13 @@ LABEL \
 RUN apt-get -y update
 RUN apt-get install -y ffmpeg
 
+# Set up subs-burner
+COPY src /app
+RUN chmod +x /app/burn_subs.sh
+
+# Set PATH env
+ENV PATH="${PATH}:/app"
+
 # Volumes
 VOLUME ["/data"]
 VOLUME ["/usr/share/fonts/custom"]
