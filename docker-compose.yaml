@@ -6,6 +6,8 @@ services:
     image: m4heshd/subs-burner
     container_name: subs-burner
     restart: no
+    ports:
+      - "8585:2525"
     volumes:
       - ./fonts:/usr/share/fonts/custom
       - ~/Videos:/data

@@ -13,8 +13,15 @@ RUN apt-get install -y ffmpeg
 COPY src /app
 RUN chmod +x /app/burn_subs.sh
 
+# Set up ttyd
+ADD https://github.com/tsl0922/ttyd/releases/download/1.7.4/ttyd.i686 /app/ttyd
+RUN chmod +x /app/ttyd
+
 # Set PATH env
 ENV PATH="${PATH}:/app"
+
+# Ports
+EXPOSE 2525
 
 # Volumes
 VOLUME ["/data"]
@@ -24,4 +31,4 @@ VOLUME ["/usr/share/fonts/custom"]
 WORKDIR /data
 
 # Start
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT ttyd -u 1000 -g 1000 -p 2525 -W bash
