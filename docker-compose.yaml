@@ -6,6 +6,8 @@ services:
     image: m4heshd/subs-burner
     container_name: subs-burner
     restart: no
+    environment:
+      TTYD_ENABLED: "1"
     ports:
       - "8585:2525" # ttyd web-ui
       - "2222:22" # SSH

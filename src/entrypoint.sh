@@ -14,4 +14,9 @@ else
 fi
 
 # Start ttyd
-ttyd -u 1000 -g 1000 -p 2525 -W bash
+if [[ ${TTYD_ENABLED:-"0"} = "1" ]]; then
+    ttyd -u 1000 -g 1000 -p 2525 -W bash
+else
+    echo "ttyd is disabled. Enable it by setting the \"TTYD_ENABLED\" environment variable to 1"
+    tail -f /dev/null
+fi
