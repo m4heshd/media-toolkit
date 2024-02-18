@@ -7,7 +7,9 @@ services:
     container_name: subs-burner
     restart: no
     ports:
-      - "8585:2525"
+      - "8585:2525" # ttyd web-ui
+      - "2222:22" # SSH
     volumes:
-      - ./fonts:/usr/share/fonts/custom
-      - ~/Videos:/data
+      - ./ssh/my_public_key.pub:/config/ssh/key.pub # Public key you want to use to access this container via SSH
+      - ./fonts:/usr/share/fonts/custom # Custom fonts that your subtitles burn-in process might require
+      - ~/Videos:/data # Media files you plan to process with subs-burner

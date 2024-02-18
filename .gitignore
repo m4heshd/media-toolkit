@@ -1,6 +1,7 @@
 # Project
+!.gitkeep
 fonts/*
-!*/.gitkeep
+ssh/*
 
 # Editor directories and files
 .idea
