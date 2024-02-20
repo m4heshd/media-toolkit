@@ -1,6 +1,6 @@
 {
   "name": "subs-burner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easily create videos with subtitles burned-in",
   "scripts": {
     "docker:up": "docker compose --project-name subs-burner up --detach --build",
