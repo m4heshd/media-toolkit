@@ -37,6 +37,7 @@ WORKDIR /data
 
 # Set up entrypoint
 COPY src/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 # Start
 ENTRYPOINT ["/entrypoint.sh"]
