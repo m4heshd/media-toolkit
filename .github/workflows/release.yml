@@ -33,14 +33,14 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            m4heshd/subs-burner:${{ github.event.release.tag_name }}
-            m4heshd/subs-burner:latest
+            m4heshd/media-toolkit:${{ github.event.release.tag_name }}
+            m4heshd/media-toolkit:latest
       # Update Docker Hub repo description
       - name: Update repo description
         uses: peter-evans/dockerhub-description@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: m4heshd/subs-burner
+          repository: m4heshd/media-toolkit
           readme-filepath: ./README.md
           short-description: ${{ github.event.repository.description }}

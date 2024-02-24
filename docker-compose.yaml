@@ -1,10 +1,10 @@
 version: "3"
 
 services:
-  subs-burner:
+  media-toolkit:
     build: .
-    image: m4heshd/subs-burner
-    container_name: subs-burner
+    image: m4heshd/media-toolkit
+    container_name: media-toolkit
     restart: no
     environment:
       TTYD_ENABLED: "1"

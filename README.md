@@ -1,7 +1,8 @@
-# subs-burner
+# media-toolkit
 
-Easily create videos with subtitles burned-in. Created for my personal use on the cloud. But if you're planning on using
-this, that's cool too. 🙂
+A Docker container with an assortment of media processing tools, including additional easy-to-use scripts. Download,
+create and edit any type of media. Created for my personal use on the cloud. But if you're planning on using this,
+that's cool too. 🙂
 
 # Support my work 🙏🏽
 
@@ -30,7 +31,8 @@ You can enable or disable it using the `TTYD_ENABLED` environment variable.
 
 ### SSH is supported
 
-If you mount your public key as a volume to `/config/ssh/key.pub`, SSH support will be automatically enabled. Check the docker compose configuration in [Usage](#usage).
+If you mount your public key as a volume to `/config/ssh/key.pub`, SSH support will be automatically enabled. Check the
+docker compose configuration in [Usage](#usage).
 
 ## Usage
 
@@ -40,9 +42,9 @@ Spin up a container using the following docker compose setup.
 version: "3"
 
 services:
-  subs-burner:
-    image: m4heshd/subs-burner:latest
-    container_name: subs-burner
+  media-toolkit:
+    image: m4heshd/media-toolkit:latest
+    container_name: media-toolkit
     restart: no
     environment:
       TTYD_ENABLED: "1"
@@ -52,7 +54,7 @@ services:
     volumes:
       - ./ssh/my_public_key.pub:/config/ssh/key.pub # Public key you want to use to access this container via SSH
       - ./fonts:/usr/share/fonts/custom # Custom fonts that your subtitles burn-in process might require
-      - ~/Videos:/data # Media files you plan to process with subs-burner
+      - ~/Videos:/data # Media files you plan to process with media-toolkit
 ```
 
-Connect to the started container via SSH or ttyd then use `burn_subs.sh` from anywhere. That's it.
+Connect to the started container via SSH or ttyd then use the included tools from anywhere. That's it.

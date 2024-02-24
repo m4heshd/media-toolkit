@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 # Meta
 LABEL \
-  "name"="subs-burner" \
+  "name"="media-toolkit" \
   "maintainer"="Mahesh Bandara Wijerathna <m4heshd@gmail.com> (m4heshd)"
 
 # Install dependencies
@@ -10,7 +10,7 @@ RUN apt-get -y update
 RUN apt-get install -y ffmpeg
 RUN apt-get install -y openssh-server
 
-# Set up subs-burner
+# Set up media-toolkit
 COPY src /app
 RUN chmod +x /app/burn_subs.sh
 

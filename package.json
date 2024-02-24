@@ -1,10 +1,10 @@
 {
-  "name": "subs-burner",
+  "name": "media-toolkit",
   "version": "1.0.1",
-  "description": "Easily create videos with subtitles burned-in",
+  "description": "A Docker container with an assortment of media processing tools",
   "scripts": {
-    "docker:up": "docker compose --project-name subs-burner up --detach --build",
-    "docker:down": "docker compose --project-name subs-burner down --volumes"
+    "docker:up": "docker compose --project-name media-toolkit up --detach --build",
+    "docker:down": "docker compose --project-name media-toolkit down --volumes"
   },
   "author": "Mahesh Bandara Wijerathna (m4heshd) <m4heshd@gmail.com>",
   "license": "MIT"
