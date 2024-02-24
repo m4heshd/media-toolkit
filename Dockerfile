@@ -10,13 +10,17 @@ RUN apt-get -y update
 RUN apt-get install -y ffmpeg
 RUN apt-get install -y openssh-server
 
-# Set up media-toolkit
-COPY src /app
-RUN chmod +x /app/burn_subs.sh
+# Set up yt-dlp
+ADD https://github.com/yt-dlp/yt-dlp/releases/download/2023.12.30/yt-dlp /app/yt-dlp
+RUN chmod a+rx /app/yt-dlp
 
 # Set up ttyd
 ADD https://github.com/tsl0922/ttyd/releases/download/1.7.4/ttyd.i686 /app/ttyd
 RUN chmod +x /app/ttyd
+
+# Set up media-toolkit
+COPY src /app
+RUN chmod +x /app/burn_subs.sh
 
 # Set PATH env
 ENV PATH="${PATH}:/app"
