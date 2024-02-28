@@ -1,0 +1,9 @@
+[package]
+name = "media-toolkit"
+description = "A Docker container with an assortment of media processing tools"
+version = "1.0.1"
+edition = "2021"
+authors = ["Mahesh Bandara Wijerathna <m4heshd@gmail.com>"]
+repository = "https://github.com/m4heshd/media-toolkit"
+
+[dependencies]
